@@ -10,16 +10,16 @@ let altitude = 0;
 const input = require("readline-sync");
 fuelLevel = input.question("Enter starting fuel level");
 while (fuelLevel < 5000 || fuelLevel > 30000) {
-fuelLevel = input.question("Enter a different fuel level"); 
+fuelLevel = input.question("Enter a different fuel level between 5000-30000 "); 
 }
 
 
 //b. Use a second loop to query the user for the number of astronauts (up to a maximum of 7). Validate the entry.
 astronauts = input.question("How many astronauts are aboard?");
-while (astronauts > 7) {
-  astronauts = input.question("How many astronauts are aboard?")
+while (astronauts > 7 || astronauts < 1) {
+  astronauts = input.question("How many astronauts are aboard? (hint: less than 10) ")
 }  
-console.log("There are " + astronauts + " astronauts aboard");  
+console.log(`There are ${astronauts} astronauts aboard this mission`);  
   
   
 //c. Use a final loop to monitor the fuel status and the altitude of the shuttle. Each iteration, decrease the fuel level by 100 units for each astronaut aboard. Also, increase the altitude by 50 kilometers.
